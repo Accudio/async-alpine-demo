@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Async Alpine Demo</title>
+
+  <link rel="stylesheet" href="/dist/main.css">
+  <script src="/dist/main.js" type="module"></script>
+
+  <!-- library css -->
+  <link rel="stylesheet" href="/dist/carousel.css" media="(max-width: 819px)">
+  <link rel="stylesheet" href="/dist/map.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+  <header class="header">
+    <img class="header__image" src="/assets/cover.jpg" width="1920" height="720" alt="Louvre">
+    <h1 class="header__title">My cool art store</h1>
+  </header>
+
+  <main>
+    <article class="products">
+      <div class="container">
+        <h2 id="products-title" class="products__title title">Our Artwork</h2>
+        <div
+          aria-labelledby="products-title"
+          class="splide"
+          x-data="carousel({
+            destroy: true,
+            perPage: 1,
+            pagination: false,
+            breakpoints: {
+              819: {
+                destroy: false
+              }
+            }
+          })"
+        >
+          <div class="splide__track">
+            <ul class="splide__list products__grid" role="list" >
+              <li class="splide__slide product">
+                <h3 class="product__title">Famous Painting</h3>
+                <p class="product__price">£129</p>
+                <img class="product__img" src="/assets/art-1.jpg" width="800" height="1177" alt="Mona Lisa">
+              </li>
+              <li class="splide__slide product">
+                <h3 class="product__title">Beautiful Statue</h3>
+                <p class="product__price">$600</p>
+                <img class="product__img" src="/assets/art-2.jpg" width="800" height="1066" alt="Venus de Milo">
+              </li>
+              <li class="splide__slide product">
+                <h3 class="product__title">Worthy Painting</h3>
+                <p class="product__price">£99.99</p>
+                <img class="product__img" src="/assets/art-3.jpg" width="800" height="639" alt="Liberty Leading the People">
+              </li>
+              <li class="splide__slide product">
+                <h3 class="product__title">Dinner Painting</h3>
+                <p class="product__price">€284</p>
+                <img class="product__img" src="/assets/art-4.jpg" width="800" height="538" alt="The Wedding at Cana">
+              </li>
+              <li class="splide__slide product">
+                <h3 class="product__title">Winged Statue</h3>
+                <p class="product__price">¥90k</p>
+                <img class="product__img" src="/assets/art-5.jpg" width="800" height="1066" alt="Winged Victory of Samothrace">
+              </li>
+              <li class="splide__slide product">
+                <h3 class="product__title">Sewing Painting</h3>
+                <p class="product__price">$90 CAD</p>
+                <img class="product__img" src="/assets/art-6.jpg" width="800" height="925" alt="The Lacemaker">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="content">
+      <div class="container">
+        <h2 class="content__title">This art is totally original, I did it myself</h2>
+        <p class="content__desc">I did all of these myself in my bedroom. Yes they're very good&mdash;I'm just that good at art. They look familiar? No definitely not, I took them, sorry I mean I made them all last week so you've definitely never seen them before anywhere.</p>
+        <a class="content__button" href="#0">Get in touch</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <h2 class="footer__title title">Find Us</h2>
+      <div
+        class="footer__map"
+        x-data="map({
+          position: [48.86, 2.336],
+          zoom: 14
+        })"
+      ></div>
+    </div>
+  </footer>
+
+</body>
+</html>

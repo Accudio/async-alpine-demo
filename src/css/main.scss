@@ -1,0 +1,153 @@
+@import 'reset';
+
+html {
+  color: var(--dark);
+  font-family: system-ui;
+
+  --brand: #F9DD51;
+  --dark: #1E1E1E;
+
+  --size-200: clamp(.5rem, 1.3vw, .75rem);
+  --size-400: clamp(1rem, 2.5vw, 1.5rem);
+  --size-500: clamp(1.5rem, 3vw, 2rem);
+  --size-700: clamp(2rem, 5vw, 4rem);
+  --size-900: clamp(3rem, 7vw, 5rem);
+}
+
+h1, h2, h3 {
+  line-height: .9;
+}
+
+@import 'utilities';
+
+/**
+ * Header
+ */
+.header {
+  display: grid;
+  justify-items: start;
+  align-items: end;
+
+  &__image,
+  &__title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &__image {
+    width: 100%;
+    min-height: 38rem;
+    object-fit: cover;
+  }
+
+  &__title {
+    background: var(--brand);
+    padding: .3em .3em;
+    font-size: var(--size-900);
+    margin: .6em;
+  }
+}
+
+/**
+ * Products
+ */
+.products {
+  padding: var(--size-700) 0;
+
+  &__title {
+    font-size: var(--size-700);
+    margin-bottom: 1em;
+  }
+
+  &__grid {
+    padding: 0;
+    margin: 0;
+
+    @media (min-width:819px) {
+      display: grid !important;
+      grid-gap: var(--size-700);
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 30ch), 1fr));
+    }
+
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+/**
+ * Product card
+ */
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1.3rem;
+
+  &__title {
+    flex: 1 0 auto;
+    font-size: var(--size-500);
+  }
+
+  &__img {
+    margin-top: var(--size-200);
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    background: #eee;
+  }
+}
+
+/**
+ * Content block
+ */
+.content {
+  background: var(--brand);
+  padding: var(--size-700) 0;
+  text-align: center;
+
+  &__title {
+    font-size: var(--size-700);
+    text-decoration-color: var(--dark);
+  }
+
+  &__desc {
+    margin: var(--size-500) auto;
+    max-width: 60ch;
+    font-size: var(--size-400);
+  }
+
+  &__button {
+    display: inline-block;
+    margin-top: var(--size-500);
+    border-radius: .5em;
+    padding: .5em 1em;
+    background: white;
+    color: currentColor;
+    font-weight: 800;
+    font-size: var(--size-500);
+    text-decoration: none;
+
+    box-shadow: 6px 6px 0 0 var(--dark);
+  }
+}
+
+/**
+ * footer
+ */
+.footer {
+  padding: 4rem 0;
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 1em;
+  }
+
+  &__map {
+    aspect-ratio: 2/1;
+    max-width: 100%;
+    min-height: 20rem;
+    background: #eee;
+    font-size: 1.25rem !important;
+  }
+}
