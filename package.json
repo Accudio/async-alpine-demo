@@ -1,7 +1,7 @@
 {
   "name": "async-alpine-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Demo for Alpine.js wrapper Async Alpine",
   "main": "index.js",
   "scripts": {
     "dev": "run-p dev:js dev:modules dev:css serve",
@@ -14,8 +14,9 @@
     "serve": "serve ."
   },
   "keywords": [],
-  "author": "",
-  "license": "UNLICENSED",
+  "private": true,
+  "author": "Alistair Shepherd <alistair@accudio.com>",
+  "license": "MIT",
   "dependencies": {
     "@splidejs/splide": "^4.0.4",
     "alpinejs": "^3.10.2",
