@@ -4,14 +4,15 @@
   "description": "Demo for Alpine.js wrapper Async Alpine",
   "main": "index.js",
   "scripts": {
-    "dev": "run-p dev:js dev:modules dev:css serve",
-    "dev:js": "esbuild src/js/main.js --outfile=dist/main.js --bundle --watch",
-    "dev:modules": "esbuild src/js/*.js --outdir=dist --bundle --watch --format=esm",
-    "dev:css": "run-p dev:css:*",
-    "dev:css:map": "sass src/css/map.scss dist/map.css --watch",
-    "dev:css:main": "sass src/css/main.scss dist/main.css --watch",
-    "dev:css:carousel": "sass src/css/carousel.scss dist/carousel.css --watch",
-    "serve": "serve ."
+    "dev": "run-p dev:* serve",
+    "dev:js": "esbuild src/js/main.js --outfile=dist/main.js --bundle --watch --sourcemap",
+    "dev:modules": "esbuild src/js/modules/*.js --outdir=dist --bundle --watch  --sourcemap --format=esm",
+    "dev:css": "sass src/css/main.scss:dist/main.css src/css/map.scss:dist/map.css src/css/carousel.scss:dist/carousel.css --watch",
+    "serve": "serve .",
+    "build": "run-p build:*",
+    "build:js": "esbuild src/js/main.js --outfile=dist/main.js --bundle --minify",
+    "build:modules": "esbuild src/js/modules/*.js --outdir=dist --bundle --minify --format=esm",
+    "build:css": "sass src/css/main.scss:dist/main.css src/css/map.scss:dist/map.css src/css/carousel.scss:dist/carousel.css --style=compressed --no-source-map"
   },
   "keywords": [],
   "private": true,
