@@ -1,7 +1,5 @@
 import Alpine from "alpinejs";
-import carousel from './carousel.js'
-import map from './map.js'
+import AsyncAlpine from 'async-alpine'
 
-Alpine.data('carousel', carousel)
-Alpine.data('map', map)
+AsyncAlpine(Alpine)
 Alpine.start()

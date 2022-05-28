@@ -27,6 +27,8 @@
         <div
           aria-labelledby="products-title"
           class="splide"
+          ax-load="media (max-width: 819px)"
+          ax-load-src="/dist/carousel.js"
           x-data="carousel({
             destroy: true,
             perPage: 1,
@@ -90,6 +92,8 @@
       <h2 class="footer__title title">Find Us</h2>
       <div
         class="footer__map"
+        ax-load="visible (200px)"
+        ax-load-src="/dist/map.js"
         x-data="map({
           position: [48.86, 2.336],
           zoom: 14
