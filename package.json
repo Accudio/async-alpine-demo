@@ -4,12 +4,12 @@
   "description": "Demo for Alpine.js wrapper Async Alpine",
   "main": "index.js",
   "scripts": {
-    "dev": "run-p dev:* serve",
+    "dev": "run-p dev:css dev:js serve",
     "dev:js": "esbuild src/js/main.js --outfile=dist/main.js --bundle --watch --sourcemap",
     "dev:modules": "esbuild src/js/modules/*.js --outdir=dist --bundle --watch  --sourcemap --format=esm",
     "dev:css": "sass src/css/main.scss:dist/main.css src/css/map.scss:dist/map.css src/css/carousel.scss:dist/carousel.css --watch",
     "serve": "serve .",
-    "build": "run-p build:*",
+    "build": "run-p build:css build:js",
     "build:js": "esbuild src/js/main.js --outfile=dist/main.js --bundle --minify",
     "build:modules": "esbuild src/js/modules/*.js --outdir=dist --bundle --minify --format=esm",
     "build:css": "sass src/css/main.scss:dist/main.css src/css/map.scss:dist/map.css src/css/carousel.scss:dist/carousel.css --style=compressed --no-source-map"
