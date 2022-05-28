@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "run-p dev:* serve",
     "dev:js": "esbuild src/js/main.js --outfile=dist/main.js --bundle --watch --sourcemap",
-    "dev:modules": "esbuild src/js/*.js --outdir=dist --bundle --watch  --sourcemap --format=esm",
+    "dev:modules": "esbuild src/js/modules/*.js --outdir=dist --bundle --watch  --sourcemap --format=esm",
     "dev:css": "sass src/css/main.scss:dist/main.css src/css/map.scss:dist/map.css src/css/carousel.scss:dist/carousel.css --watch",
     "serve": "serve .",
     "build": "run-p build:*",
     "build:js": "esbuild src/js/main.js --outfile=dist/main.js --bundle --minify",
-    "build:modules": "esbuild src/js/*.js --outdir=dist --bundle --minify --format=esm",
+    "build:modules": "esbuild src/js/modules/*.js --outdir=dist --bundle --minify --format=esm",
     "build:css": "sass src/css/main.scss:dist/main.css src/css/map.scss:dist/map.css src/css/carousel.scss:dist/carousel.css --style=compressed --no-source-map"
   },
   "keywords": [],
